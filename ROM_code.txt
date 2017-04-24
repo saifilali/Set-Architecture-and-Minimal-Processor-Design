@@ -1,0 +1,23 @@
+Saifil Ali
+Chris Folleras
+Jonathan Wang
+
+// implementation of C = A + B
+// matrix A at 0x0, matrix B at 0x4, matrix C at 0x8
+00 00 0000 | LOAD  R0 0x0
+00 10 0100 | LOAD  R1 0x4
+10 01 0000 | ADD   R0 R1    // R1 = R0 + R1
+01 00 1000 | STORE R1 0x8   // C11 = A11 + B11
+00 00 0001 | LOAD  R0 0x1
+00 10 0101 | LOAD  R1 0x5
+10 00 0100 | ADD   R0 R1    
+01 10 1001 | STORE R1 0x9   // C12 = A12 + B12
+00 00 0010 | LOAD  R0 0x2
+00 10 0110 | LOAD  R1 0x6
+10 01 0000 | ADD   R0 R1    
+01 10 1010 | STORE R1 0xA   // C21 = A21 + B21
+00 00 0011 | LOAD  R0 0x3
+00 10 0111 | LOAD  R1 0x7
+10 01 0000 | ADD   R0 R1    
+01 10 1010 | STORE R1 0xB   // C22 = A22 + B22
+11 00 0000 | HALT
